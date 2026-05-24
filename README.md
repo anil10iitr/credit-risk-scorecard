@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > **Built by Anil Jhanwar** — AI/ML Consultant | 15+ years in Credit Risk & Fintech  
-> Modeled after production systems deployed at scale in major Indian banks and Southeast Asian fintechs.
+> Modeled after production systems deployed at scale in major US and Indian banks, and Southeast Asian fintechs.
 
 ---
 
