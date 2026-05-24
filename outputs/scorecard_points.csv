@@ -1,0 +1,35 @@
+variable,bin,woe,iv,event_rate_pct,coefficient,points
+RevolvingUtilizationOfUnsecuredLines,"(-inf, 0.0029]",-1.0022,1.0018,2.56,0.6363,71.1
+RevolvingUtilizationOfUnsecuredLines,0.0029 to 0.444,-0.982,1.0018,2.61,0.6363,70.7
+RevolvingUtilizationOfUnsecuredLines,"(0.444, 0.697]",0.3086,1.0018,8.89,0.6363,47.0
+RevolvingUtilizationOfUnsecuredLines,"(0.697, 0.98]",1.0241,1.0018,16.63,0.6363,33.9
+RevolvingUtilizationOfUnsecuredLines,"(0.98, inf]",1.4328,1.0018,23.09,0.6363,26.4
+NumberOfTimes90DaysLate,0,-0.3915,0.8395,4.62,0.5448,58.9
+NumberOfTimes90DaysLate,1 to 20,2.294,0.8395,41.52,0.5448,16.6
+NumberOfTime60-89DaysPastDueNotWorse,0,-0.2872,0.5692,5.1,0.4465,56.4
+NumberOfTime60-89DaysPastDueNotWorse,1 to 20,2.0751,0.5692,36.33,0.4465,26.0
+NumberOfTime30-59DaysPastDueNotWorse,"(-inf, 1.0]",-0.2541,0.4631,5.26,0.4758,56.2
+NumberOfTime30-59DaysPastDueNotWorse,"(1.0, inf]",1.8923,0.4631,32.21,0.4758,26.7
+age,"(-inf, 33.0]",0.5781,0.2484,11.32,0.4501,45.2
+age,"(33.0, 39.0]",0.3691,0.2484,9.39,0.4501,47.9
+age,"(39.0, 44.0]",0.2602,0.2484,8.5,0.4501,49.3
+age,"(44.0, 48.0]",0.2088,0.2484,8.11,0.4501,50.0
+age,"(48.0, 52.0]",0.1642,0.2484,7.78,0.4501,50.6
+age,"(52.0, 56.0]",0.0057,0.2484,6.72,0.4501,52.6
+age,"(56.0, 61.0]",-0.3181,0.2484,4.95,0.4501,56.8
+age,"(61.0, 65.0]",-0.6005,0.2484,3.78,0.4501,60.5
+age,"(65.0, 72.0]",-0.9267,0.2484,2.76,0.4501,64.7
+age,"(72.0, inf]",-1.1467,0.2484,2.22,0.4501,67.6
+NumberOfOpenCreditLinesAndLoans,"(-inf, 3.0]",0.5383,0.0669,10.93,-0.0416,53.3
+NumberOfOpenCreditLinesAndLoans,"(3.0, 4.0]",-0.0304,0.0669,6.5,-0.0416,52.7
+NumberOfOpenCreditLinesAndLoans,"(4.0, 5.0]",-0.0885,0.0669,6.15,-0.0416,52.6
+NumberOfOpenCreditLinesAndLoans,5.0 to inf,-0.1386,0.0669,5.87,-0.0416,52.5
+MonthlyIncome,"(-inf, 2300.0]",0.2775,0.0628,8.64,0.3334,50.0
+MonthlyIncome,2300.0 to 5375.0,0.2584,0.0628,8.49,0.3334,50.2
+MonthlyIncome,5375.0 to 6614.0,-0.1224,0.0628,5.96,0.3334,53.9
+MonthlyIncome,"(6614.0, 8250.0]",-0.2472,0.0628,5.3,0.3334,55.1
+MonthlyIncome,"(8250.0, 10721.2]",-0.3206,0.0628,4.94,0.3334,55.8
+MonthlyIncome,"(10721.2, inf]",-0.3914,0.0628,4.62,0.3334,56.5
+NumberOfDependents,"(-inf, 1.0]",-0.0905,0.0259,6.14,0.2667,53.4
+NumberOfDependents,"(1.0, 2.0]",0.222,0.0259,8.21,0.2667,51.0
+NumberOfDependents,"(2.0, inf]",0.351,0.0259,9.24,0.2667,50.0

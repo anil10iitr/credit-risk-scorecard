@@ -1,0 +1,11 @@
+feature,iv,strength,include
+RevolvingUtilizationOfUnsecuredLines,1.001804420871834,Strong,True
+NumberOfTimes90DaysLate,0.8395179157815311,Strong,True
+NumberOfTime60-89DaysPastDueNotWorse,0.5692487893427126,Strong,True
+NumberOfTime30-59DaysPastDueNotWorse,0.4631206458716513,Strong,True
+age,0.24840961205651543,Medium,True
+NumberOfOpenCreditLinesAndLoans,0.06686828435128868,Weak,True
+MonthlyIncome,0.0627560660670634,Weak,True
+NumberOfDependents,0.02594895196180015,Weak,True
+DebtRatio,0.018086160648555137,Useless,False
+NumberRealEstateLoansOrLines,0.0014668830814174591,Useless,False

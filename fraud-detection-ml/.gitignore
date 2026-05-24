@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+outputs/models/*.pkl
+data/raw/*.csv
+*.png
+*.html
+.DS_Store
+.ipynb_checkpoints/

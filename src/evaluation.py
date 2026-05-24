@@ -83,11 +83,11 @@ def psi(
 
 def psi_interpretation(psi_val: float) -> str:
     if psi_val < PSI_THRESHOLDS["Stable"]:
-        return "✅ Stable (no action needed)"
+        return "[OK] Stable (no action needed)"
     elif psi_val < PSI_THRESHOLDS["Monitor"]:
-        return "⚠️  Monitor (investigate shift)"
+        return "[WARN] Monitor (investigate shift)"
     else:
-        return "🚨 Unstable (model redevelopment recommended)"
+        return "[ALERT] Unstable (model redevelopment recommended)"
 
 
 # ==============================================================================
@@ -175,12 +175,12 @@ def model_report(
     }
 
     print(f"\n{'='*55}")
-    print(f"  Model Evaluation Report — {model_name}")
+    print(f"  Model Evaluation Report - {model_name}")
     print(f"{'='*55}")
     print(f"  Gini (Train / Val)   : {gini_train:.4f} / {gini_val:.4f}  [{report['gini_val_grade']}]")
     print(f"  Gini Degradation     : {report['gini_degradation']:.4f}")
     print(f"  KS   (Train / Val)   : {ks_train:.4f} / {ks_val:.4f}  [{report['ks_val_grade']}]")
-    print(f"  PSI  (Train→Val)     : {psi_val:.4f}  {report['psi_status']}")
+    print(f"  PSI  (Train->Val)    : {psi_val:.4f}  {report['psi_status']}")
     print(f"{'='*55}\n")
 
     return report

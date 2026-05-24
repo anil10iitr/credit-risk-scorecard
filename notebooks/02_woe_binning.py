@@ -10,10 +10,18 @@
 # 4. Interpreting the results for an MRM review
 
 # %% Imports
+from pathlib import Path
+import os
+import sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import sys; sys.path.insert(0, "..")
+
+_ROOT = Path.cwd()
+if _ROOT.name == "notebooks":
+    _ROOT = _ROOT.parent
+os.chdir(_ROOT)
+sys.path.insert(0, str(_ROOT))
 
 from src.data_utils import load_data, preprocess, split_data
 from src.woe_encoder import WOEBinEncoder

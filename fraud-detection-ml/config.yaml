@@ -1,0 +1,23 @@
+costs:
+  fn_cost: 250.0   # $ lost per missed fraud
+  fp_cost: 5.0     # $ cost per false alarm (declined transaction)
+
+xgboost:
+  n_estimators: 1000
+  max_depth: 6
+  learning_rate: 0.02
+  subsample: 0.8
+  colsample_bytree: 0.7
+  min_child_weight: 10
+  gamma: 1
+  random_state: 42
+
+lightgbm:
+  n_estimators: 1000
+  max_depth: 6
+  learning_rate: 0.02
+  num_leaves: 63
+  min_child_samples: 20
+  subsample: 0.8
+  colsample_bytree: 0.7
+  random_state: 42

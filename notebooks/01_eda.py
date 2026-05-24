@@ -10,12 +10,19 @@
 # 4. Are there extreme outliers that need capping?
 
 # %% Imports
+from pathlib import Path
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
 warnings.filterwarnings("ignore")
+
+_ROOT = Path.cwd()
+if _ROOT.name == "notebooks":
+    _ROOT = _ROOT.parent
+os.chdir(_ROOT)
 
 plt.style.use("seaborn-v0_8-whitegrid")
 plt.rcParams["figure.figsize"] = (12, 5)

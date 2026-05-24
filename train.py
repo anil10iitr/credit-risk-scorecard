@@ -163,7 +163,7 @@ def main(args):
     save_model(challenger,  "outputs/models", "challenger_xgboost")
     save_model(woe_encoder, "outputs/models", "woe_encoder")
 
-    logger.info("\n✅ Pipeline complete. Check outputs/ for all reports and artifacts.")
+    logger.info("\nPipeline complete. Check outputs/ for all reports and artifacts.")
 
 
 if __name__ == "__main__":

@@ -189,7 +189,7 @@ class WOEBinEncoder:
         if len(bins) > 2:
             df["bin"] = pd.cut(df["x"], bins=bins, include_lowest=True)
         else:
-            df["bin"] = df["x"].astype(str)
+            df["bin"] = df["x"]
 
         agg = (
             df.groupby("bin", observed=True)
@@ -197,8 +197,13 @@ class WOEBinEncoder:
             .reset_index()
         )
         agg["non_events"] = agg["count"] - agg["events"]
-        agg["bin_lower"] = bins[:-1] if len(bins) > 2 else agg["bin"]
-        agg["bin_upper"] = bins[1:] if len(bins) > 2 else agg["bin"]
+        if len(bins) > 2:
+            # Map Interval bins to numeric bounds from cut edges
+            agg["bin_lower"] = agg["bin"].apply(lambda iv: iv.left if hasattr(iv, "left") else iv)
+            agg["bin_upper"] = agg["bin"].apply(lambda iv: iv.right if hasattr(iv, "right") else iv)
+        else:
+            agg["bin_lower"] = pd.to_numeric(agg["bin"], errors="coerce")
+            agg["bin_upper"] = pd.to_numeric(agg["bin"], errors="coerce")
         return agg
 
     def _merge_small_bins(
@@ -312,11 +317,28 @@ class WOEBinEncoder:
             else:
                 lower = row.get("bin_lower", -np.inf)
                 upper = row.get("bin_upper", np.inf)
+                if hasattr(lower, "left"):
+                    lower, upper = lower.left, lower.right
                 if pd.isna(lower):
                     lower = -np.inf
                 if pd.isna(upper):
                     upper = np.inf
-                mask = (series >= lower) & (series < upper) & series.notna()
+                try:
+                    lower = float(lower)
+                    upper = float(upper)
+                except (TypeError, ValueError):
+                    mask = series.astype(str) == str(row["bin"]) 
+                    mask &= series.notna()
+                    result[mask] = row["woe"]
+                    continue
+                if lower == upper:
+                    mask = series.eq(lower) & series.notna()
+                elif np.isinf(lower) and lower < 0:
+                    mask = (series < upper) & series.notna()
+                elif np.isinf(upper):
+                    mask = (series >= lower) & series.notna()
+                else:
+                    mask = (series >= lower) & (series < upper) & series.notna()
             result[mask] = row["woe"]
 
         # Fill any unmapped values with 0
