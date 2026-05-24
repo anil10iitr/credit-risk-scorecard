@@ -1,0 +1,36 @@
+# Credit Risk Scorecard — Configuration
+# Modify hyperparameters here; no code changes needed
+
+split:
+  val_size: 0.15
+  oot_size: 0.15
+  random_state: 42
+
+woe:
+  n_bins: 10
+  min_bin_pct: 0.05        # Minimum 5% population per bin
+  enforce_monotone: true
+  iv_threshold: 0.02       # Features below this IV are excluded
+
+scorecard_scaler:
+  pdo: 20                  # Points to double odds
+  base_score: 600          # Score at base odds
+  base_odds: 30            # Good:Bad ratio at base score
+
+logistic_regression:
+  C: 1.0
+  solver: lbfgs
+  max_iter: 1000
+  random_state: 42
+
+xgboost:
+  n_estimators: 300
+  max_depth: 4
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  random_state: 42
+
+monitoring:
+  psi_alert_threshold: 0.10
+  gini_alert_threshold: 0.05   # Alert if val Gini drops >5pts vs train
